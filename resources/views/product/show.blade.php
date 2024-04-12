@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-7 col-12">
                 <div class="product-details-5 pr-70">
-                    <img src="/assets/img/product-details/l1-details-5.png" alt="">
+                    <img src="{{asset('storage/'.$product->cover_img)}}" alt="">
                 </div>
             </div>
             <div class="col-md-12 col-lg-5 col-12">
@@ -27,9 +27,9 @@
                         </div>
                     </div>
                     <div class="details-price">
-                        <span>${{$product->price}}</span>
+                        <span>RP.{{$product->price}}</span>
                     </div>
-                    <p>{!! $product->description !!}</p>
+                    <span>{!! $product->description !!}</span>
 
                     <div class="quickview-plus-minus">
 
@@ -41,21 +41,21 @@
                     <div class="product-details-cati-tag mt-35">
                         <ul>
                             <li class="categories-title">Categories :</li>
-                            <li><a href="#">fashion</a></li>
-                            <li><a href="#">electronics</a></li>
-                            <li><a href="#">toys</a></li>
-                            <li><a href="#">food</a></li>
-                            <li><a href="#">jewellery</a></li>
+                            <li><a href="#">Glasses</a></li>
+                            <li><a href="#">Eyes</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Optic</a></li>
+                            <li><a href="#">Jewellery</a></li>
                         </ul>
                     </div>
                     <div class="product-details-cati-tag mtb-10">
                         <ul>
                             <li class="categories-title">Tags :</li>
-                            <li><a href="#">fashion</a></li>
-                            <li><a href="#">electronics</a></li>
-                            <li><a href="#">toys</a></li>
-                            <li><a href="#">food</a></li>
-                            <li><a href="#">jewellery</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#">Optic</a></li>
+                            <li><a href="#">Glasses</a></li>
+                            <li><a href="#">Eyes</a></li>
+                            <li><a href="#">Fashion</a></li>
                         </ul>
                     </div>
                     <div class="product-share">

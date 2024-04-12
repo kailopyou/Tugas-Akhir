@@ -33,6 +33,6 @@ class ShopActivationRequest extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.admin.shop-activation');
+        return $this->markdown('mail.admin.shop-activation')->from('example@test.in', 'Example');
     }
 }

@@ -88,7 +88,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 7,
                 'key' => 'admin.description',
                 'display_name' => 'Admin Description',
-                'value' => 'Welcome to Voyager. The Missing Admin for Laravel',
+                'value' => 'Welcome to E-Optik. The Dashboard for Admin & Seller',
                 'details' => '',
                 'type' => 'text',
                 'order' => 2,

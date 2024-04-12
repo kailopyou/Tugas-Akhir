@@ -111,7 +111,7 @@ $add = is_null($dataTypeContent->getKey());
 
                         @foreach($attributeOptions as $attr)
 
-                        <p>
+                        
 
                             <div class="form-group">
                                 <label for="">{{$attr->name}} :</label>

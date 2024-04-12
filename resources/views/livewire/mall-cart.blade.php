@@ -20,8 +20,8 @@
                             </thead>
                             <tbody>
 
-
                                 @foreach ($cartItems as $item)
+
                                 <tr>
                                     <td class="product-remove">
                                         <a href="{{ route('cart.destroy', $item['id']) }}"><i
@@ -30,11 +30,11 @@
                                     </td>
 
                                     <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/img/cart/1.jpg" alt=""></a>
+                                        <img src="{{asset('storage/'.$item['associatedModel']['cover_img'])}}" alt="">
                                     </td>
                                     <td class="product-name"><a href="#">{{ $item['name'] }} </a></td>
                                     <td class="product-price-cart"><span
-                                            class="amount">${{Cart::session(auth()->id())->get($item['id'])->getPriceSum()}}</span>
+                                            class="amount">RP.{{Cart::session(auth()->id())->get($item['id'])->getPriceSum()}}</span>
                                     </td>
                                     <td class="product-quantity">
                                         <livewire:cart-update-form :item="$item" :key="$item['id']" />

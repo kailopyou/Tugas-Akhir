@@ -29,8 +29,8 @@
                 <i class="icofont icofont-star"></i>
             </div>
             <h4><a href="{{route('products.show', $product)}}">{{$product->name}}</a></h4>
-            <span>{{$product->description}}</span>
-            <h5>$ {{$product->price}}</h5>
+            <span>{!! $product->description !!}</span>
+            <h5>RP. {{$product->price}}</h5>
         <p>{{$product->shop->owner->name ?? 'n/a'}}</p>
         </div>
     </div>

@@ -8,7 +8,7 @@
         <div class="categories-menu">
 
             <div class="category-heading">
-                <h3> All Departments <i class="pe-7s-angle-down"></i></h3>
+                <h3> All Categories <i class="pe-7s-angle-down"></i></h3>
             </div>
 
             @include('_category-list')

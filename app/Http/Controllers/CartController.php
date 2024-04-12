@@ -61,6 +61,15 @@ class CartController extends Controller
     public function checkout()
     {
         return view('cart.checkout');
+
+        //  // Mendapatkan data pengguna yang terautentikasi
+        //  $user = Auth::user();
+    
+        //  // Mendapatkan item keranjang
+        //  $cartItems = \Cart::session(auth()->id())->getContent();
+ 
+        //  // Menampilkan view checkout dan melewatkan data pengguna dan item keranjang
+        //  return view('cart.checkout', compact('user', 'cartItems'));
     }
 
     public function applyCoupon()

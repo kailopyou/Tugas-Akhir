@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Jobs\MonitorOrder;
 use App\Order;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -27,9 +29,14 @@ class OrderController extends Controller
             'payment_method' => 'required',
         ]);
 
+
+        
+
         $order = new Order();
 
         $order->order_number = uniqid('OrderNumber-');
+
+
 
         $order->shipping_fullname = $request->input('shipping_fullname');
         $order->shipping_state = $request->input('shipping_state');
