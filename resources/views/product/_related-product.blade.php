@@ -26,7 +26,7 @@
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -96,7 +96,7 @@
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -112,15 +112,15 @@
                             <a class="animate-top" title="Add To Cart" href="#">
                                 <i class="pe-7s-cart"></i>
                             </a>
-                            <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal"
-                                href="#">
+                            <a class="animate-right" title="Quick View" data-toggle="modal"
+                                data-target="#exampleModal" href="#">
                                 <i class="pe-7s-look"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -135,15 +135,15 @@
                             <a class="animate-top" title="Add To Cart" href="#">
                                 <i class="pe-7s-cart"></i>
                             </a>
-                            <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal"
-                                href="#">
+                            <a class="animate-right" title="Quick View" data-toggle="modal"
+                                data-target="#exampleModal" href="#">
                                 <i class="pe-7s-look"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -159,15 +159,15 @@
                             <a class="animate-top" title="Add To Cart" href="#">
                                 <i class="pe-7s-cart"></i>
                             </a>
-                            <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal"
-                                href="#">
+                            <a class="animate-right" title="Quick View" data-toggle="modal"
+                                data-target="#exampleModal" href="#">
                                 <i class="pe-7s-look"></i>
                             </a>
                         </div>
                     </div>
                     <div class="product-content">
                         <h4><a href="#">Arifo Stylas Dress</a></h4>
-                        <span>$115.00</span>
+                        <span>Rp. 115.00</span>
                     </div>
                 </div>
             </div>

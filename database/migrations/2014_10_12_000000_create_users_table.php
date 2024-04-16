@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('user_fullname');
-            $table->string('user_state');
-            $table->string('user_city');
-            $table->string('user_zipcode');
-            $table->string('user_address');
-            $table->bigIncrements('user_phone');
+            $table->string('user_fullname')->default('yanto');
+            $table->string('user_state')->nullable();
+            $table->string('user_city')->nullable();
+            $table->string('user_zipcode')->nullable();
+            $table->string('user_address')->nullable();
+            $table->string('user_phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

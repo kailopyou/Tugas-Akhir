@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +14,7 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/checkout.js') }}" defer></script>
 
-    
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,7 +24,33 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @if (request()->is('register') || request()->is('login'))
+        <style>
+            body {
+                /* Set background image */
+                background-image: url('{{ Voyager::image(Voyager::setting('admin.bg_image'), voyager_asset('images/bg-optik.jpg')) }}');
+                /* Set background color as fallback */
+                background-color: {{ Voyager::setting('admin.bg_color', '#FFFFFF') }};
+                /* Center the background image horizontally and vertically */
+                background-position: center center;
+                /* Scale the background image to be as large as possible */
+                background-size: cover;
+                /* Fix the background image to the viewport */
+                background-attachment: fixed;
+            }
+
+            .auth-container {
+                box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+                border-radius: 15px;
+            }
+
+            .input {
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            }
+        </style>
+    @endif
 </head>
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -31,7 +58,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('E-Optik', 'E-Optik') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -41,7 +70,7 @@
 
                         @can('seller')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/admin/shops')}}">Open Your Shop</a>
+                                <a class="nav-link" href="{{ url('/admin/shops') }}">Open Your Shop</a>
                             </li>
                         @endcan
                     </ul>
@@ -49,16 +78,16 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                         <li class="nav-item mr-2">
+                        <li class="nav-item mr-2">
                             <a class="nav-link p-0 m-0" href="{{ route('cart.index') }}">
                                 <i class="fas fa-cart-arrow-down text-success fa-2x"></i>
-                                    <div class="badge badge-danger">
-                                        @auth
-                                        {{Cart::session(auth()->id())->getContent()->count()}}
-                                        @else
+                                <div class="badge badge-danger">
+                                    @auth
+                                        {{ Cart::session(auth()->id())->getContent()->count() }}
+                                    @else
                                         0
-                                        @endauth
-                                    </div>
+                                    @endauth
+                                </div>
                             </a>
                         </li>
 
@@ -75,18 +104,20 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -98,23 +129,25 @@
         </nav>
 
         {{-- display success message --}}
-        @if(session()->has('message'))
+        @if (session()->has('message'))
             <div class="alert alert-success text-center" role="alert">
-               {{session('message')}}
+                {{ session('message') }}
             </div>
         @endif
 
         {{-- display error message --}}
 
-        @if(session()->has('error'))
-        <div class="alert alert-danger text-center" role="alert">
-            {{session('error')}}
-        </div>
+        @if (session()->has('error'))
+            <div class="alert alert-danger text-center" role="alert">
+                {{ session('error') }}
+            </div>
         @endif
+        <div class="pb-5"></div>
 
-        <main class="py-4 container">
+        <main class="py-5 mt-5 container">
             @yield('content')
         </main>
     </div>
 </body>
+
 </html>

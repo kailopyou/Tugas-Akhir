@@ -21,25 +21,25 @@
                             <tbody>
 
                                 @foreach ($cartItems as $item)
+                                    <tr>
+                                        <td class="product-remove">
+                                            <a href="{{ route('cart.destroy', $item['id']) }}"><i
+                                                    class="pe-7s-close"></i></a>
 
-                                <tr>
-                                    <td class="product-remove">
-                                        <a href="{{ route('cart.destroy', $item['id']) }}"><i
-                                                class="pe-7s-close"></i></a>
+                                        </td>
 
-                                    </td>
-
-                                    <td class="product-thumbnail">
-                                        <img src="{{asset('storage/'.$item['associatedModel']['cover_img'])}}" alt="">
-                                    </td>
-                                    <td class="product-name"><a href="#">{{ $item['name'] }} </a></td>
-                                    <td class="product-price-cart"><span
-                                            class="amount">RP.{{Cart::session(auth()->id())->get($item['id'])->getPriceSum()}}</span>
-                                    </td>
-                                    <td class="product-quantity">
-                                        <livewire:cart-update-form :item="$item" :key="$item['id']" />
-                                    </td>
-                                </tr>
+                                        <td class="product-thumbnail">
+                                            <img src="{{ asset('storage/' . $item['associatedModel']['cover_img']) }}"
+                                                alt="" width="100px" height="100px">
+                                        </td>
+                                        <td class="product-name"><a href="#">{{ $item['name'] }} </a></td>
+                                        <td class="product-price-cart"><span class="amount">Rp.
+                                                {{ Cart::session(auth()->id())->get($item['id'])->getPriceSum() }}</span>
+                                        </td>
+                                        <td class="product-quantity">
+                                            <livewire:cart-update-form :item="$item" :key="$item['id']" />
+                                        </td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -63,10 +63,10 @@
                             <div class="cart-page-total">
                                 <h2>Cart totals</h2>
                                 <ul>
-                                    <li>SubTotal<span>{{\Cart::session(auth()->id())->getSubTotal()}}</span></li>
-                                    <li>Total<span>{{\Cart::session(auth()->id())->getTotal()}}</span></li>
+                                    <li>SubTotal<span>Rp. {{ \Cart::session(auth()->id())->getSubTotal() }}</span></li>
+                                    <li>Total<span>Rp. {{ \Cart::session(auth()->id())->getTotal() }}</span></li>
                                 </ul>
-                                <a href="{{route('cart.checkout')}}">Proceed to checkout</a>
+                                <a href="{{ route('cart.checkout') }}">Proceed to checkout</a>
                             </div>
                         </div>
                     </div>

@@ -26,7 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::with('shop.owner')->take(30)->get();
+        $products = Product::with('shop.owner')->get()->map(function ($product) {
+            $nameWords = explode(' ', $product->name);
+            $trimmedName = implode(' ', array_slice($nameWords, 0, 2));
+            $product->name = $trimmedName;
+            return $product;
+        })->take(30);
+
 
         $categories = Category::with('children.children')->whereNull('parent_id')->get();
 

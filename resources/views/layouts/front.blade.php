@@ -48,23 +48,21 @@
                         {{-- <li><a href="wishlist.html"><i class="pe-7s-like"></i>Wishlist</a></li> --}}
 
                         @auth
-                        <li>
-                            <a href="{{url('/shops/create')}}">Sell</a>
-                        </li>
-                        <li>
+                            <li>
+                                <a href="{{ url('/shops/create') }}">Sell</a>
+                            </li>
+                            <li>
                                 <form action=" {{ url('/logout') }} " method="POST">
                                     @csrf
                                     <input type="submit" value="Logout" />
                                 </form>
-                        </li>
-                      
-                            @else
-
+                            </li>
+                        @else
                             <li>
-                                <a href="{{url('/shops/create')}}">Sell</a>
+                                <a href="{{ url('/shops/create') }}">Sell</a>
                             </li>
                             <li>
-                                <a href="{{url('/register')}}">Sign Up</a>
+                                <a href="{{ url('/register') }}">Sign Up</a>
                             </li>
                         @endauth
 
@@ -75,28 +73,28 @@
         <div class="header-bottom pt-40 pb-30 clearfix">
             <div class="header-bottom-wrapper pr-200 pl-200">
                 <div class="logo-3">
-                    <a href="{{route('home')}}">
+                    <a href="{{ route('home') }}">
                         <img src="/assets/img/logo/logo-3.png" alt="">
                     </a>
                 </div>
                 <div class="categories-search-wrapper">
 
                     <div class="categories-wrapper">
-                        <form action="{{route('products.search')}}" method="GET">
+                        <form action="{{ route('products.search') }}" method="GET">
                             <input name="query" placeholder="Enter Your key word" type="text">
                             <button type="submit"> Search </button>
                         </form>
                     </div>
                 </div>
                 <div class="trace-cart-wrapper">
-                    <div class="trace same-style">
+                    {{-- <div class="trace same-style">
                         <div class="same-style-icon">
                             <a href="#"><i class="pe-7s-plane"></i></a>
                         </div>
                         <div class="same-style-text">
                             <a href="#">Product <br>trace</a>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="categories-cart same-style">
                         <div class="same-style-icon">
                             <a href="{{ route('cart.index') }}"><i class="pe-7s-cart"></i></a>
@@ -105,9 +103,9 @@
                             <a href="{{ route('cart.index') }}">My Cart <br>
 
                                 @auth
-                                {{Cart::session(auth()->id())->getContent()->count()}}
+                                    {{ Cart::session(auth()->id())->getContent()->count() }}
                                 @else
-                                0
+                                    0
                                 @endauth
 
                                 Item</a>
@@ -118,7 +116,7 @@
                     <div class="mobile-menu">
                         <nav id="mobile-menu-active">
                             <ul class="menu-overflow">
-                                <li><a href="{{url('/')}}"></a>
+                                <li><a href="{{ url('/') }}"></a>
 
                                 </li>
                                 <li><a href="#"></a>
@@ -135,17 +133,15 @@
     <!-- header end -->
 
 
-    @if(session('message'))
-
+    @if (session('message'))
         <div class="alert alert-success text-center" role="alert">
             <strong>{{ session('message') }}</strong>
         </div>
     @endif
 
-    @if(session('error'))
-
+    @if (session('error'))
         <div class="alert alert-danger text-center" role="alert">
-            <strong>{{session('error')}} </strong>
+            <strong>{{ session('error') }} </strong>
         </div>
     @endif
 
@@ -168,7 +164,8 @@
                                     </div>
                                     <div class="footer-info-content2">
                                         <p>Denpasar, Bali
-                                            <br>Indonesia</p>
+                                            <br>Indonesia
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="footer-address-electro">
@@ -177,7 +174,8 @@
                                     </div>
                                     <div class="footer-info-content2">
                                         <p>+62 (812) 2518 4203
-                                            <br>+62 (813) 2223 3353</p>
+                                            <br>+62 (813) 2223 3353
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="footer-address-electro">
@@ -186,7 +184,8 @@
                                     </div>
                                     <div class="footer-info-content2">
                                         <p><a href="#">forkaito@gmail.com</a>
-                                            <br><a href="#">company@domain.info</a></p>
+                                            <br><a href="#">company@domain.info</a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +480,8 @@
                             </div>
                             <div class="quickview-plus-minus">
                                 <div class="cart-plus-minus">
-                                    <input type="text" value="02" name="qtybutton" class="cart-plus-minus-box">
+                                    <input type="text" value="02" name="qtybutton"
+                                        class="cart-plus-minus-box">
                                 </div>
                                 <div class="quickview-btn-cart">
                                     <a class="btn-hover-black" href="#">add to cart</a>

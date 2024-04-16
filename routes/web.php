@@ -53,3 +53,4 @@ Route::group(['prefix' => 'seller', 'middleware' => 'auth', 'as' => 'seller.', '
 
     Route::get('/orders/delivered/{suborder}',  'OrderController@markDelivered')->name('order.delivered');
 });
+
